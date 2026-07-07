@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="הצטרפי לקבוצת הדילים השקטה של הציידת. מציאות אופנה, טיפוח, אקססוריז ועיצוב הבית בהנחות מטורפות של 50% עד 90% פחות מהארץ!">
+    <title>הציידת | קבוצת הדילים והקופונים הרשמית</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        :root {
+            /* Light Pink / Rose / Feminine Palette */
+            --bg-base: #fff5f7;
+            --bg-surface: rgba(255, 255, 255, 0.88);
+            --bg-card: rgba(255, 241, 242, 0.7);
+            --border-color: rgba(251, 113, 133, 0.2); /* Soft rose border */
+            
+            --primary-glow: linear-gradient(135deg, #f43f5e 0%, #db2777 100%); /* Vibrant Rose to Pink */
+            --accent-gold: #d97706; /* Darker amber for contrast on light bg */
+            --accent-pink: #db2777;
+            
+            --whatsapp-green: #25d366;
+            --whatsapp-hover: #128c7e;
+            --whatsapp-glow: rgba(37, 211, 102, 0.25);
+            
+            --text-main: #311c26; /* Deep rose-tinted charcoal for maximum readability */
+            --text-muted: #64748b;
+            
+            /* Transitions */
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Ambient Background Gradients */
+        .bg-glow-1 {
+            position: absolute;
+            top: -10%;
+            left: -20%;
+            width: 80vw;
+            height: 80vw;
+            background: radial-gradient(circle, rgba(251, 113, 133, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bg-glow-2 {
+            position: absolute;
+            bottom: 20%;
+            right: -20%;
+            width: 70vw;
+            height: 70vw;
+            background: radial-gradient(circle, rgba(244, 63, 94, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 480px; /* Highly optimized mobile-first width */
+            margin: 0 auto;
+            padding: 20px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Header Logo */
+        header {
+            text-align: center;
+            padding: 12px 0;
+        }
+
+        .logo-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            background: rgba(251, 113, 133, 0.08);
+            border: 1px solid rgba(251, 113, 133, 0.3);
+            box-shadow: 0 4px 15px rgba(251, 113, 133, 0.05);
+        }
+
+        .logo-icon {
+            width: 18px;
+            height: 18px;
+            fill: var(--accent-pink);
+            filter: drop-shadow(0 0 6px rgba(244, 63, 94, 0.3));
+        }
+
+        .logo-text {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 900;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            background: var(--primary-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Main Conversion Card */
+        .main-card {
+            background: var(--bg-surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            padding: 28px 20px;
+            box-shadow: 0 15px 35px rgba(244, 63, 94, 0.06), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        /* Card Badge */
+        .badge {
+            background: linear-gradient(90deg, rgba(244, 63, 94, 0.08) 0%, rgba(219, 39, 119, 0.08) 100%);
+            border: 1px solid rgba(244, 63, 94, 0.25);
+            color: var(--accent-pink);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-pulse {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-pink);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 6px var(--accent-pink);
+            animation: pulse-dot 1.8s infinite;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 1.7rem;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 10px;
+            color: #1e1117;
+        }
+
+        .highlight-text {
+            background: var(--primary-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            position: relative;
+            display: inline-block;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #58444e;
+            margin-bottom: 24px;
+            padding: 0 4px;
+            font-weight: 400;
+        }
+
+        /* Features List */
+        .features-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+            text-align: right;
+        }
+
+        .feature-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(251, 113, 133, 0.08);
+            border-radius: 16px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: var(--transition-smooth);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 228, 230, 0.5);
+            border-color: rgba(251, 113, 133, 0.2);
+        }
+
+        .feature-icon-wrapper {
+            background: rgba(244, 63, 94, 0.1);
+            border-radius: 10px;
+            padding: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon {
+            width: 18px;
+            height: 18px;
+            fill: var(--accent-pink);
+        }
+
+        .feature-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .feature-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1e1117;
+        }
+
+        .feature-desc {
+            font-size: 0.8rem;
+            color: #6c535f;
+        }
+
+        /* Giant CTA Button */
+        .cta-wrapper {
+            width: 100%;
+            position: relative;
+        }
+
+        .cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: linear-gradient(135deg, var(--whatsapp-green) 0%, #15b34c 100%);
+            color: #ffffff;
+            font-family: 'Rubik', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 900;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px var(--whatsapp-glow),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            animation: pulse-button 2.5s infinite;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            filter: brightness(1.05);
+        }
+
+        .cta-btn:active {
+            transform: translateY(1px);
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+        }
+
+        .btn-arrow {
+            font-family: sans-serif;
+            font-size: 1.3rem;
+            transition: var(--transition-smooth);
+        }
+
+        .cta-btn:hover .btn-arrow {
+            transform: translateX(-4px); /* Moves left because of RTL layout */
+        }
+
+        .cta-subtext {
+            font-size: 0.78rem;
+            color: #6c535f;
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        /* Proof / Chat bubble Section */
+        .proof-section {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 8px 25px rgba(244, 63, 94, 0.03);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+
+        .proof-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            text-align: center;
+            color: #1e1117;
+            margin-bottom: 4px;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-bubble {
+            background: #fff;
+            border-radius: 16px 16px 0 16px; /* RTL bubble style (sender on left) */
+            padding: 10px 12px;
+            max-width: 90%;
+            align-self: flex-start;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .chat-bubble.admin {
+            background: #eefdf4;
+            border-radius: 16px 16px 16px 0; /* RTL receiver style */
+            align-self: flex-end;
+            border: 1px solid rgba(34, 197, 94, 0.15);
+        }
+
+        .chat-user {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 2px;
+        }
+
+        .chat-user.admin-title {
+            color: var(--whatsapp-green);
+        }
+
+        .chat-text {
+            font-size: 0.84rem;
+            color: var(--text-main);
+        }
+
+        .chat-time {
+            font-size: 0.62rem;
+            color: var(--text-muted);
+            text-align: left;
+            margin-top: 3px;
+            display: block;
+        }
+
+        /* FAQ Accordions */
+        .faq-section {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 8px 25px rgba(244, 63, 94, 0.03);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+        }
+
+        .faq-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            text-align: center;
+            color: #1e1117;
+            margin-bottom: 4px;
+        }
+
+        .faq-item {
+            border-radius: 12px;
+            background: var(--bg-card);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.01);
+            transition: var(--transition-smooth);
+        }
+
+        .faq-question {
+            padding: 12px 14px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: #6c535f;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+            padding: 0 16px;
+            font-size: 0.8rem;
+            color: #58444e;
+            line-height: 1.5;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 12px;
+            transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 14px;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        footer a {
+            color: var(--accent-pink);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-dot {
+            0% {
+                transform: scale(0.9);
+                box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.4);
+            }
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 5px rgba(244, 63, 94, 0);
+            }
+            100% {
+                transform: scale(0.9);
+                box-shadow: 0 0 0 0 rgba(244, 63, 94, 0);
+            }
+        }
+
+        @keyframes pulse-button {
+            0% {
+                box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+            }
+            50% {
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5), 0 0 0 6px rgba(37, 211, 102, 0.12);
+            }
+            100% {
+                box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+            }
+        }
+    </style>
+
+    <!-- TikTok Pixel Integration -->
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var e=0;e<ttq.methods.length;e++)ttq.setAndDefer(ttq,ttq.methods[e]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq._i=ttq._i||{},ttq._i[t]=[],ttq._i[t]._u=t,ttq._t=ttq._t||{},ttq._t[t]=+new Date,ttq._o=ttq._o||{},ttq._o[t]=e||{};var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid="+t;var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o)
+        }(window, document, "ttq");
+        
+        // Initializing the Pixel with user's specific Pixel ID
+        ttq.load('D5976ERC77U843EECNB0');
+        ttq.page();
+    </script>
+</head>
+<body>
+
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <header>
+            <div class="logo-wrap">
+                <svg class="logo-icon" viewBox="0 0 24 24">
+                    <!-- Heart shaped shopping bag SVG -->
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span class="logo-text">הציידת</span>
+            </div>
+        </header>
+
+        <!-- Main Card -->
+        <main class="main-card">
+            <div class="badge">
+                <span class="badge-pulse"></span>
+                <span>הצטרפות חינם - פתוח כעת 💎</span>
+            </div>
+            
+            <h1>
+                למה לשלם מחיר מלא?
+                <br>
+                <span class="highlight-text">קונים חכם בחצי מחיר!</span>
+            </h1>
+            
+            <p class="subtitle">
+                הצטרפי לקבוצת הדילים השקטה שצדה עבורך את מציאות האופנה, הטיפוח, האקססוריז ועיצוב הבית הכי שווים ברשת - ישירות לווצאפ שלך בחינם.
+            </p>
+
+            <!-- Features -->
+            <div class="features-container">
+                
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24">
+                            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <span class="feature-title">קבוצה שקטה וממוקדת</span>
+                        <span class="feature-desc">בלי חפירות, בלי דיונים מיותרים. רק קישורים ישירים לדילים הכי חמים.</span>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <span class="feature-title">רק מוצרים שנבדקו ידנית</span>
+                        <span class="feature-desc">בגדים, אקססוריז, קוסמטיקה וטיפוח ממוכרים אמינים ובעלי דירוג גבוה.</span>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24">
+                            <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <span class="feature-title">קופוני הנחה סודיים</span>
+                        <span class="feature-desc">הנחות בלעדיות וקופוני חנות מוסתרים שיחסכו לך מאות שקלים.</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-wrapper">
+                <a href="https://chat.whatsapp.com/G11rIFR6Ctn5jG26oJiyeR" id="whatsapp-cta" class="cta-btn" onclick="trackAndRedirect(event)">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.394 9.805-9.799.002-2.592-1.01-5.029-2.846-6.867A9.728 9.728 0 0 0 11.517 1.11c-5.412 0-9.816 4.402-9.82 9.805-.002 1.957.514 3.791 1.488 5.48L2.2 21.8l5.447-1.429zM17.06 14.7c-.3-.15-1.774-.875-2.046-.975-.273-.1-.472-.15-.67.15-.197.3-.767.975-.94 1.174-.173.2-.347.225-.648.075-.3-.15-1.266-.467-2.41-1.487-.89-.793-1.49-1.773-1.664-2.073-.173-.3-.018-.462.13-.61.135-.135.3-.349.45-.524.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.524-.075-.15-.67-1.62-.92-2.225-.24-.58-.48-.5-.67-.512-.172-.008-.37-.01-.567-.01-.198 0-.52.074-.79.373-.27.3-1.04 1.02-1.04 2.487 0 1.467 1.066 2.886 1.215 3.086.149.2 2.099 3.205 5.084 4.494.71.307 1.265.49 1.697.627.713.227 1.36.195 1.872.118.571-.085 1.774-.725 2.022-1.424.249-.699.249-1.299.174-1.424-.075-.125-.27-.2-.57-.35z"/>
+                    </svg>
+                    <span>הצטרפות לווצאפ של הציידת</span>
+                    <span class="btn-arrow">➔</span>
+                </a>
+                <p class="cta-subtext">קבוצה שקטה | ללא עלות | פתוח לזמן מוגבל</p>
+            </div>
+        </main>
+
+        <!-- Social Proof Widget -->
+        <section class="proof-section">
+            <h2 class="proof-title">חברות מועדון הציידת מספרות:</h2>
+            <div class="chat-container">
+                
+                <div class="chat-bubble">
+                    <div class="chat-user">דנה מ.</div>
+                    <p class="chat-text">שומעות? הג'ינס והאקססוריז שהמלצתן עליהם הגיעו! יושב מושלם והאיכות פסיכית יחסית למחיר של 40 שקל. הצלתן אותי!</p>
+                    <span class="chat-time">12:32</span>
+                </div>
+
+                <div class="chat-bubble admin">
+                    <div class="chat-user admin-title">הציידת (מנהלת)</div>
+                    <p class="chat-text">איזה כיף דנה! תתחדשי 💖 בהמשך השבוע נעלה ריכוז מיוחד של שמלות קיץ מהממות ומוצרי טיפוח מומלצים מחנויות עם משלוח מהיר.</p>
+                    <span class="chat-time">12:35</span>
+                </div>
+
+                <div class="chat-bubble">
+                    <div class="chat-user">יסמין ס.</div>
+                    <p class="chat-text">הקבוצה הכי טובה שיש. שקטה, בלי דיבורים ובלי ספאם, רק הדילים הכי שווים והטרנדים הכי חמים מטיקטוק. השטיח והווילונות לבית שקניתי מהלינקים שלכן פשוט מושלמים!</p>
+                    <span class="chat-time">היום, 09:15</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="faq-title">שאלות נפוצות</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">למה הקבוצה שקטה?</div>
+                <div class="faq-answer">
+                    כדי שלא להציק לך! הקבוצה מיועדת לשליחת קישורים נבחרים וקופונים שווים בלבד. רק המנהלות יכולות לשלוח הודעות כדי למנוע הצפת התראות מיותרות בטלפון שלך.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">איך המוצרים נבחרים?</div>
+                <div class="faq-answer">
+                    אנחנו מסננות בקפידה את הדילים ברשת. אנחנו בודקות ציונים של מוכרים, פידבקים של קונים וחוות דעת עם תמונות אמיתיות של המוצר כדי לוואדא שאת מקבלת איכות מצוינת במחיר הכי נמוך שיש.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">האם יש עלות להצטרפות?</div>
+                <div class="faq-answer">
+                    ממש לא, ההצטרפות והחברות בקבוצה הן 100% בחינם ותמיד יישארו כך! 
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>כל הזכויות שמורות להציידת © 2026</p>
+            <p>דף נחיתה זה אינו קשור באופן רשמי לחברת Meta. השימוש בקישורים ובקופונים באחריות המשתמש בלבד.</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // FAQ Accordion Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(el => el.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Click Tracking and Redirect function
+        function trackAndRedirect(event) {
+            event.preventDefault();
+            const destination = event.currentTarget.href;
+
+            // Trigger TikTok Standard & Custom Events
+            if (typeof ttq !== 'undefined') {
+                ttq.track('InitiateCheckout', {
+                    content_name: 'WhatsApp Hazayedet Group Join Button',
+                    content_category: 'Feminine Community Redirect'
+                });
+                
+                ttq.track('ClickWhatsAppCTA_Hazayedet', {
+                    page_title: document.title,
+                    pixel_id: 'D5976ERC77U843EECNB0'
+                });
+            }
+
+            // Redirect after 350ms to ensure the tracking requests resolve
+            setTimeout(function() {
+                window.location.href = destination;
+            }, 350);
+        }
+    </script>
+</body>
+</html>
