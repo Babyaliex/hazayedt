@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="הצטרפו לקבוצת הדילים השקטה של הצייד. מצאו את המוצרים הכי חמים, קופונים סודיים והנחות מטורפות של 50% עד 90% פחות מהארץ!">
     <title>הצייד עלי אקספרס | קבוצת הדילים הרשמית</title>
     
@@ -33,13 +33,19 @@
             padding: 0;
         }
 
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: var(--bg-base);
+        }
+
         body {
             font-family: 'Rubik', sans-serif;
-            background-color: var(--bg-base);
             color: var(--text-primary);
             line-height: 1.5;
-            overflow-x: hidden;
-            min-height: 100vh;
             /* Minimalist light grid background */
             background-image: 
                 linear-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px),
@@ -48,14 +54,25 @@
             background-position: center;
         }
 
+        /* Wrapper that clips any overflow causing mobile right-shift */
+        .page-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         /* Abstract radial green glow behind the CTA */
         .light-leak {
             position: absolute;
             top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 450px;
-            height: 450px;
+            width: 320px;
+            height: 320px;
             background: radial-gradient(circle, rgba(37, 211, 102, 0.08) 0%, transparent 70%);
             z-index: -1;
             pointer-events: none;
@@ -63,16 +80,15 @@
 
         .container {
             width: 100%;
-            max-width: 440px; /* Locked mobile viewport width - absolute perfect fit for phone */
-            margin: 0 auto;
-            padding: 30px 16px 20px 16px;
+            max-width: 440px; /* Perfect lock for phone viewports */
+            padding: 30px 20px 24px 20px;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 28px;
             position: relative;
         }
 
-        /* Monospace Minimal Header */
+        /* Header Logo */
         header {
             text-align: center;
             margin-bottom: 4px;
@@ -119,7 +135,7 @@
         }
 
         .glow-title {
-            color: #0fa94a; /* Vibrant green for light background readability */
+            color: #0fa94a;
             display: block;
             margin-top: 4px;
         }
@@ -131,24 +147,22 @@
             line-height: 1.55;
         }
 
-        /* Minimalist Vertical Info List (No Emojis) */
+        /* Minimalist Vertical Info List (No Emojis, No outer card wrapping the list) */
         .info-list {
             display: flex;
             flex-direction: column;
-            gap: 1px; /* Divider effect */
-            background-color: var(--border-primary);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border-primary);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            gap: 12px; /* Distinct items instead of one giant card */
         }
 
         .info-item {
             background-color: var(--bg-surface);
-            padding: 18px 16px;
+            padding: 16px 18px;
             display: flex;
             gap: 14px;
             align-items: flex-start;
+            border-radius: 16px;
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
 
         .info-num {
@@ -223,14 +237,14 @@
             gap: 10px;
             width: 100%;
             background-color: var(--accent-green);
-            color: #ffffff; /* White text for premium contrast */
+            color: #ffffff;
             text-decoration: none;
             font-weight: 900;
             font-size: 1.15rem;
             padding: 16px 20px;
             border-radius: 16px;
             transition: all 0.2s ease;
-            box-shadow: 0 6px 15px var(--whatsapp-glow);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.15);
             border: none;
             cursor: pointer;
         }
@@ -278,6 +292,10 @@
             display: flex;
             flex-direction: column;
             gap: 4px;
+            background-color: var(--bg-surface);
+            padding: 16px;
+            border-radius: 16px;
+            border: 1px solid var(--border-primary);
         }
 
         .faq-q {
@@ -333,94 +351,96 @@
 </head>
 <body>
 
-    <div class="light-leak"></div>
+    <div class="page-wrapper">
+        <div class="light-leak"></div>
 
-    <div class="container">
-        
-        <!-- Header -->
-        <header>
-            <div class="brand-logo">הצייד עלי אקספרס</div>
-        </header>
-
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <h1>
-                למה לשלם <span class="crossed-out">מחיר מלא?</span>
-                <br>
-                <span class="glow-title">קונים ישירות מהמקור.</span>
-            </h1>
-            <p class="hero-desc">
-                הצטרפו לקבוצת הדילים השקטה של הצייד ותתחילו לקנות את אותם המוצרים ב-50% עד 90% פחות. בלי חפירות ובלי ספאם.
-            </p>
-        </section>
-
-        <!-- Minimalist Features List -->
-        <section class="info-list">
+        <div class="container">
             
-            <div class="info-item">
-                <span class="info-num">01</span>
-                <div class="info-content">
-                    <span class="info-title">קבוצה שקטה לחלוטין</span>
-                    <span class="info-desc">רק מנהלי הקבוצה שולחים הודעות. בלי דיונים, בלי חפירות ובלי התראות ספאם.</span>
+            <!-- Header -->
+            <header>
+                <div class="brand-logo">הצייד עלי אקספרס</div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1>
+                    למה לשלם <span class="crossed-out">מחיר מלא?</span>
+                    <br>
+                    <span class="glow-title">קונים ישירות מהמקור.</span>
+                </h1>
+                <p class="hero-desc">
+                    הצטרפו לקבוצת הדילים השקטה של הצייד ותתחילו לקנות את אותם המוצרים ב-50% עד 90% פחות. בלי חפירות ובלי ספאם.
+                </p>
+            </section>
+
+            <!-- Minimalist Features List -->
+            <section class="info-list">
+                
+                <div class="info-item">
+                    <span class="info-num">01</span>
+                    <div class="info-content">
+                        <span class="info-title">קבוצה שקטה לחלוטין</span>
+                        <span class="info-desc">רק מנהלי הקבוצה שולחים הודעות. בלי דיונים, בלי חפירות ובלי התראות ספאם.</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="info-item">
-                <span class="info-num">02</span>
-                <div class="info-content">
-                    <span class="info-title">סינון וניטור ידני</span>
-                    <span class="info-desc">אנחנו מפרסמים רק דילים שנבדקו, מוכרים אמינים ומוצרים עם פידבק חיובי גבוה.</span>
+                <div class="info-item">
+                    <span class="info-num">02</span>
+                    <div class="info-content">
+                        <span class="info-title">סינון וניטור ידני</span>
+                        <span class="info-desc">אנחנו מפרסמים רק דילים שנבדקו, מוכרים אמינים ומוצרים עם פידבק חיובי גבוה.</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="info-item">
-                <span class="info-num">03</span>
-                <div class="info-content">
-                    <span class="info-title">קופוני הנחה בלעדיים</span>
-                    <span class="info-desc">גישה לקופונים סודיים וירידות מחיר דרמטיות בזמן אמת לפני כולם.</span>
+                <div class="info-item">
+                    <span class="info-num">03</span>
+                    <div class="info-content">
+                        <span class="info-title">קופוני הנחה בלעדיים</span>
+                        <span class="info-desc">גישה לקופונים סודיים וירידות מחיר דרמטיות בזמן אמת לפני כולם.</span>
+                    </div>
                 </div>
-            </div>
 
-        </section>
+            </section>
 
-        <!-- CTA Terminal Card -->
-        <section class="cta-container">
-            <div class="status-bar">
-                <span class="status-dot"></span>
-                <span>ההצטרפות פתוחה בחינם לזמן מוגבל</span>
-            </div>
-            
-            <a href="https://chat.whatsapp.com/HjEfcKZZgTA3Guz7RZ6qeq" id="whatsapp-cta" class="whatsapp-cta-button" onclick="trackAndRedirect(event)">
-                <svg class="btn-icon" viewBox="0 0 24 24">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.394 9.805-9.799.002-2.592-1.01-5.029-2.846-6.867A9.728 9.728 0 0 0 11.517 1.11c-5.412 0-9.816 4.402-9.82 9.805-.002 1.957.514 3.791 1.488 5.48L2.2 21.8l5.447-1.429zM17.06 14.7c-.3-.15-1.774-.875-2.046-.975-.273-.1-.472-.15-.67.15-.197.3-.767.975-.94 1.174-.173.2-.347.225-.648.075-.3-.15-1.266-.467-2.41-1.487-.89-.793-1.49-1.773-1.664-2.073-.173-.3-.018-.462.13-.61.135-.135.3-.349.45-.524.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.524-.075-.15-.67-1.62-.92-2.225-.24-.58-.48-.5-.67-.512-.172-.008-.37-.01-.567-.01-.198 0-.52.074-.79.373-.27.3-1.04 1.02-1.04 2.487 0 1.467 1.066 2.886 1.215 3.086.149.2 2.099 3.205 5.084 4.494.71.307 1.265.49 1.697.627.713.227 1.36.195 1.872.118.571-.085 1.774-.725 2.022-1.424.249-.699.249-1.299.174-1.424-.075-.125-.27-.2-.57-.35z"/>
-                </svg>
-                <span>הצטרפות ישירה לווצאפ</span>
-            </a>
-            
-            <p class="sub-cta-text">קבוצה שקטה | ללא עלות | מעל 15,000 חברים כבר חוסכים</p>
-        </section>
+            <!-- CTA Terminal Card -->
+            <section class="cta-container">
+                <div class="status-bar">
+                    <span class="status-dot"></span>
+                    <span>ההצטרפות פתוחה בחינם לזמן מוגבל</span>
+                </div>
+                
+                <a href="https://chat.whatsapp.com/HjEfcKZZgTA3Guz7RZ6qeq" id="whatsapp-cta" class="whatsapp-cta-button" onclick="trackAndRedirect(event)">
+                    <svg class="btn-icon" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.394 9.805-9.799.002-2.592-1.01-5.029-2.846-6.867A9.728 9.728 0 0 0 11.517 1.11c-5.412 0-9.816 4.402-9.82 9.805-.002 1.957.514 3.791 1.488 5.48L2.2 21.8l5.447-1.429zM17.06 14.7c-.3-.15-1.774-.875-2.046-.975-.273-.1-.472-.15-.67.15-.197.3-.767.975-.94 1.174-.173.2-.347.225-.648.075-.3-.15-1.266-.467-2.41-1.487-.89-.793-1.49-1.773-1.664-2.073-.173-.3-.018-.462.13-.61.135-.135.3-.349.45-.524.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.524-.075-.15-.67-1.62-.92-2.225-.24-.58-.48-.5-.67-.512-.172-.008-.37-.01-.567-.01-.198 0-.52.074-.79.373-.27.3-1.04 1.02-1.04 2.487 0 1.467 1.066 2.886 1.215 3.086.149.2 2.099 3.205 5.084 4.494.71.307 1.265.49 1.697.627.713.227 1.36.195 1.872.118.571-.085 1.774-.725 2.022-1.424.249-.699.249-1.299.174-1.424-.075-.125-.27-.2-.57-.35z"/>
+                    </svg>
+                    <span>הצטרפות ישירה לווצאפ</span>
+                </a>
+                
+                <p class="sub-cta-text">קבוצה שקטה | ללא עלות | מעל 15,000 חברים כבר חוסכים</p>
+            </section>
 
-        <!-- Minimal FAQ Grid (Clean typographic Q&A blocks) -->
-        <section class="faq-grid">
-            <h2 class="faq-headline">שאלות נפוצות</h2>
-            
-            <div class="faq-card">
-                <span class="faq-q">איך זה עובד ולמה זה בחינם?</span>
-                <p class="faq-a">אנחנו מאתרים דילים מבוססי הנחות עמוקות וקופוני חנות מוסתרים. ההצטרפות לקבוצה היא בחינם לחלוטין. הרווח שלנו מגיע מעמלות שותפים קטנות שמשולמות על ידי פלטפורמות הקנייה עצמן, ללא כל תוספת עלות מצדכם.</p>
-            </div>
+            <!-- Minimal FAQ Grid (Clean typographic Q&A blocks) -->
+            <section class="faq-grid">
+                <h2 class="faq-headline">שאלות נפוצות</h2>
+                
+                <div class="faq-card">
+                    <span class="faq-q">איך זה עובד ולמה זה בחינם?</span>
+                    <p class="faq-a">אנחנו מאתרים דילים מבוססי הנחות עמוקות וקופוני חנות מוסתרים. ההצטרפות לקבוצה היא בחינם לחלוטין. הרווח שלנו מגיע מעמלות שותפים קטנות שמשולמות על ידי פלטפורמות הקנייה עצמן, ללא כל תוספת עלות מצדכם.</p>
+                </div>
 
-            <div class="faq-card">
-                <span class="faq-q">האם תהיה הצפה של הודעות בטלפון שלי?</span>
-                <p class="faq-a">ממש לא. הקבוצה שקטה וסגורה לתגובות. אנחנו שולחים בממוצע כ-2 הודעות בשעה, בעיקר בין השעות 9:00 בבוקר ל-23:00 בלילה, כדי שלא להפריע לכם בשעות המנוחה.</p>
-            </div>
-        </section>
+                <div class="faq-card">
+                    <span class="faq-q">האם תהיה הצפה של הודעות בטלפון שלי?</span>
+                    <p class="faq-a">ממש לא. הקבוצה שקטה וסגורה לתגובות. אנחנו שולחים בממוצע כ-2 הודעות בשעה, בעיקר בין השעות 9:00 בבוקר ל-23:00 בלילה, כדי שלא להפריע לכם בשעות המנוחה.</p>
+                </div>
+            </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>כל הזכויות שמורות להצייד © 2026</p>
-            <p>דף נחיתה זה אינו קשור באופן רשמי לחברות AliExpress או Meta. השימוש בקישורים ובקופונים באחריות המשתמש בלבד.</p>
-        </footer>
+            <!-- Footer -->
+            <footer>
+                <p>כל הזכויות שמורות להצייד © 2026</p>
+                <p>דף נחיתה זה אינו קשור באופן רשמי לחברות AliExpress או Meta. השימוש בקישורים ובקופונים באחריות המשתמש בלבד.</p>
+            </footer>
 
+        </div>
     </div>
 
     <!-- Scripts -->
