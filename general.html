@@ -6,12 +6,10 @@
     <meta name="description" content="הצטרפו לקבוצת הדילים השקטה של הצייד. מצאו את המוצרים הכי חמים, קופונים סודיים והנחות מטורפות של 50% עד 90% פחות מהארץ!">
     <title>הצייד עלי אקספרס | קבוצת הדילים הרשמית</title>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
     <style>
         :root {
             /* Inviting Light High-Tech Theme */
@@ -249,8 +247,9 @@
             cursor: pointer;
         }
 
+        /* הבעיה תוקנה כאן - השורה של pointer-events הוסרה כדי שטיקטוק יזהה את כל המלבן */
         .whatsapp-cta-button * {
-            pointer-events: none !important;
+            /* Pointer events removed for TikTok Pixel compatibility */
         }
 
         .whatsapp-cta-button:hover {
@@ -343,7 +342,6 @@
         }
     </style>
 
-    <!-- TikTok Pixel Code Start -->
     <script>
     !function (w, d, t) {
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
@@ -354,8 +352,7 @@
       ttq.page();
     }(window, document, 'ttq');
     </script>
-    <!-- TikTok Pixel Code End -->
-</head>
+    </head>
 <body>
 
     <div class="page-wrapper">
@@ -363,12 +360,10 @@
 
         <div class="container">
             
-            <!-- Header -->
             <header>
                 <div class="brand-logo">הצייד עלי אקספרס</div>
             </header>
 
-            <!-- Hero Section -->
             <section class="hero-section">
                 <h1>
                     למה לשלם <span class="crossed-out">מחיר מלא?</span>
@@ -380,7 +375,6 @@
                 </p>
             </section>
 
-            <!-- Minimalist Features List -->
             <section class="info-list">
                 
                 <div class="info-item">
@@ -409,7 +403,6 @@
 
             </section>
 
-            <!-- CTA Terminal Card -->
             <section class="cta-container">
                 <div class="status-bar">
                     <span class="status-dot"></span>
@@ -426,7 +419,6 @@
                 <p class="sub-cta-text">קבוצה שקטה | ללא עלות | מעל 15,000 חברים כבר חוסכים</p>
             </section>
 
-            <!-- Minimal FAQ Grid (Clean typographic Q&A blocks) -->
             <section class="faq-grid">
                 <h2 class="faq-headline">שאלות נפוצות</h2>
                 
@@ -441,7 +433,6 @@
                 </div>
             </section>
 
-            <!-- Footer -->
             <footer>
                 <p>כל הזכויות שמורות להצייד © 2026</p>
                 <p>דף נחיתה זה אינו קשור באופן רשמי לחברות AliExpress או Meta. השימוש בקישורים ובקופונים באחריות המשתמש בלבד.</p>
@@ -450,7 +441,6 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script>
         // Click Tracking and Redirect function
         function trackAndRedirect(event) {
