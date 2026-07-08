@@ -57,7 +57,6 @@
             line-height: 1.6;
         }
 
-        /* Page wrapper clips the background glows and fixes mobile layout offsets */
         .page-wrapper {
             width: 100%;
             overflow: hidden;
@@ -68,7 +67,6 @@
             align-items: center;
         }
 
-        /* Ambient Background Gradients */
         .bg-glow-1 {
             position: absolute;
             top: -10%;
@@ -91,7 +89,6 @@
             pointer-events: none;
         }
 
-        /* Container */
         .container {
             width: 100%;
             max-width: 480px;
@@ -102,7 +99,6 @@
             position: relative;
         }
 
-        /* Header Logo */
         header {
             text-align: center;
             padding: 16px 0;
@@ -128,7 +124,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Main Conversion Card */
         .main-card {
             background: var(--bg-surface);
             backdrop-filter: blur(16px);
@@ -147,7 +142,6 @@
             animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
-        /* Card Badge */
         .badge {
             background: linear-gradient(90deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
             border: 1px solid rgba(168, 85, 247, 0.3);
@@ -172,7 +166,6 @@
             animation: pulse-dot 1.8s infinite;
         }
 
-        /* Typography */
         h1 {
             font-size: 1.85rem;
             font-weight: 900;
@@ -198,7 +191,6 @@
             font-weight: 400;
         }
 
-        /* Features List */
         .features-container {
             width: 100%;
             display: flex;
@@ -258,7 +250,6 @@
             color: var(--text-muted);
         }
 
-        /* Giant CTA Button */
         .cta-wrapper {
             width: 100%;
             position: relative;
@@ -286,13 +277,25 @@
             animation: pulse-button 2.5s infinite;
         }
 
+        /* שכבה שקופה חלקה ללכידה ויזואלית מושלמת */
+        .tiktok-invisible-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background: transparent;
+            border-radius: 20px;
+        }
+
         .cta-btn::before {
             content: "";
             display: inline-block;
             width: 28px;
             height: 28px;
             margin-left: 12px;
-            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTS4wNTcgMjRsMS42ODctNi4xNjNjLTEuMDQxLTEuODA0LTEuNTg4LTMuODQ5LTEuNTg3LTUuOTQ2Qy4wNiA1LjM0OCA1LjM5Ny4wMSAxMi            1wMDguMDFjMy4yMDIuMDAxIDYuMjEyIDEuMjQ2IDguNDc3IDMuNTE0IDIuMjY2IDIuMjY4IDMuNTA3IDUuMjggMy41MDUgOC40ODQtLjAwNCA2LjY1Ny01LjM0IDExLjk5Ny0xMS45NTMgMTEuOTk3LTIuMDA1LS4wMDEtMy55NzMtLjUwMi01LjcyNC0xLjQ1N0wwIDI0em02LjU5LTQuODQ2YzEuNi45NSAzLjE4OCAxL            jQ0OSA0LjYyNSAxLjQ1MSA1LjQwMy4wMDIgOS44MDMtNC4zOTQgOS44MDUtOS43OTkuMDAyLTIuNTkyLTEuMDEtNS4wMjktMi44NDYtNi44NjdBOS43MjggOS43MjggMCAwIDAgMTEuNTE3IDEu1MWMtNS40MTIgMC05LjgxNiA0LjQwMi05LjgyIDkuODA1LS4wMDIgMS45NTcuNTE0IDMuNzkxIDEuNDg4IDUuNDhTD            IuMiAyMS44bDUuNDQ3LTEuNDI5ek0xNy4wNiAxNC43Yy0uMy0uMTUtMS43NzQtLjg3NS0yLjA0Ni0uOTc1LS4yNzMtLjEtLjQ3Mi0uMTUtLjY3LjE1LS4xOTcuMy0uNzY3Ljk3NS0uOTQgMS4xNzQtLjE3MyLjItLjM0Ny4yMjUtLjYorderuMDc1LS4zLS4xNS0xLjI2Ni0uNDY3LTIuNDEtMS40ODctLjg5LS43OTMtMS4            0OS0xLjc3My0xLjY2NC0yLjA3My0uMTczLS4zLS4wMTgtLjQ62Ljg5LS43OTMtMS40OS0xLjc3My0xLjY2NC0yLjA3My0uMTczLS4zLS4wMTgtLjQ62Ljg5LS43OTMtMS40OS0xLjc3My0xLjY2NC0yLjA3My0uMTczLS4zLS4wMTgtLjQ2Mi4xMy0uNjEuMTM1LS4xMzUuMy0uMzQ5LjQ1LS41MjQuMTUtLjE3NS4yLS4zLjMtLjUuMS0uMi4wNS0uMzc1LS4wMjUtLjUyNC0uMDc1LS4xNS0uNjctMS4e            IDEzLjA4Ni4xNDkuMiAyLjA5OSAzLjI5OSA1LjA4NCA0LjQ5NC43MS4zMDcgMS4yNjUuNDkgMS42OTYuNjI3LjcxMy4yMjcgMS4zNi4xOTUgMS44NzIuMTE4LjU3MS0uMDg1IDEuNzc0LS43MjUgMi4wMjItMS40y-uMDc1LS4xMjUtLjI3LS4yLS41Ny0uMzV6Jy8+PC9zdmc+");
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTS4wNTcgMjRsMS42ODctNi4xNjNjLTEuMDQxLTEuODA0LTEuNTg4LTMuODQ5LTEuNTg3LTUuOTQ2Qy4wNiA1LjM0OCA1LjM5Ny4wMSAxMiAxMDguMDFjMy4yMDIuMDAxIDYuMjEyIDEuMjQ2IDguNDc7IDMuNTE0IDIuMjY2IDIuMjY4IDMuNTA3IDUuMjggMy41MDUgOC40ODQtLjAwNCA2LjheIEMxMy4wODYgMTQuN2MvLW9kZl9yZXNvbHZlIHNldHRpbmdzeidNLz48L3N2Zz4=");
             background-size: contain;
             background-repeat: no-repeat;
         }
@@ -328,7 +331,6 @@
             font-weight: 400;
         }
 
-        /* Proof / Chat bubble Section */
         .proof-section {
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
@@ -356,7 +358,7 @@
 
         .chat-bubble {
             background: #1e293b;
-            border-radius: 18px 18px 0 18px; /* RTL bubble style (sender on left) */
+            border-radius: 18px 18px 0 18px;
             padding: 12px 14px;
             max-width: 90%;
             align-self: flex-start;
@@ -367,7 +369,7 @@
 
         .chat-bubble.admin {
             background: #052e16;
-            border-radius: 18px 18px 18px 0; /* RTL receiver style */
+            border-radius: 18px 18px 18px 0;
             align-self: flex-end;
             border: 1px solid rgba(34, 197, 94, 0.1);
         }
@@ -396,7 +398,6 @@
             display: block;
         }
 
-        /* FAQ Accordions */
         .faq-section {
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
@@ -464,7 +465,6 @@
             transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 24px 16px;
@@ -475,43 +475,21 @@
             gap: 8px;
         }
 
-        /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes pulse-dot {
-            0% {
-                transform: scale(0.9);
-                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
-            }
-            70% {
-                transform: scale(1.1);
-                box-shadow: 0 0 0 6px rgba(245, 158, 11, 0);
-            }
-            100% {
-                transform: scale(0.9);
-                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
-            }
+            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
         }
 
         @keyframes pulse-button {
-            0% {
-                box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
-            }
-            50% {
-                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.65), 0 0 0 8px rgba(37, 211, 102, 0.15);
-            }
-            100% {
-                box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
-            }
+            0% { box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35); }
+            50% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.65), 0 0 0 8px rgba(37, 211, 102, 0.15); }
+            100% { box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35); }
         }
     </style>
 
@@ -603,7 +581,10 @@
 
                 <!-- CTA -->
                 <div class="cta-wrapper">
-                    <a href="https://chat.whatsapp.com/HjEfcKZZgTA3Guz7RZ6qeq" id="whatsapp-cta" class="cta-btn" onclick="trackAndRedirect(event)">הצטרפות לווצאפ בחינם</a>
+                    <a href="https://chat.whatsapp.com/HjEfcKZZgTA3Guz7RZ6qeq" id="whatsapp-cta" class="cta-btn" onclick="trackAndRedirect(event)">
+                        <div class="tiktok-invisible-overlay"></div>
+                        הצטרפות לווצאפ בחינם
+                    </a>
                     <p class="cta-subtext">קבוצה שקטה | ללא עלות | מעל 15,000 חברים כבר איתנו</p>
                 </div>
             </main>
@@ -685,25 +666,20 @@
             });
         });
 
-        // Click Tracking and Redirect function
+        // פונקציית מעקב מעודכנת עם אירוע רשמי בלחיצה
         function trackAndRedirect(event) {
             event.preventDefault();
             const destination = event.currentTarget.href;
 
-            // Trigger TikTok Standard & Custom Events
+            // כאן הגדרנו את אירוע ה-ClickButton הרשמי של טיקטוק
             if (typeof ttq !== 'undefined') {
                 ttq.track('ClickButton', {
                     content_name: 'WhatsApp Group Join Button',
                     content_category: 'Community Redirect'
                 });
-                
-                ttq.track('ClickWhatsAppCTA', {
-                    page_title: document.title,
-                    pixel_id: 'D977583C77U29TKO6B5G'
-                });
             }
 
-            // Redirect after 350ms to ensure the tracking requests resolve
+            // Redirect after 350ms to ensure tracking registers
             setTimeout(function() {
                 window.location.href = destination;
             }, 350);
