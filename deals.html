@@ -290,7 +290,7 @@
             width: 28px;
             height: 28px;
             margin-left: 12px;
-            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTS4wNTcgMjRsMS42ODct6IKY2YTMwYWU=");
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTS4wNTcgMjRsMS42ODctNi4xNjNjLTEuMDQxLTEuODA0LTEuNTg4LTMuODQ5LTEuNTg3LTUuOTQ2Qy4wNiA1LjM0OCA1LjM5Ny4wMSAxMiAxMDA4LjAxYzMuMjIwMi4wMDEgNi4yMTIgMS4yNDYgOC40NzcgMy41MTQgMi4yNjYgMi4yNjggMy41MDcgNS4yOCUzLjUwNSA4LjQ4NC0uMDA0IDYuNjU3LTUuMzQgMTEuOTk3LTExLjk1MyMTEuOTk3LTIuMDA1LS4wMDEtMy55NzMtLjUwMi01LjcyNC0xLjQ1N0wwIDI0em02LjU5LTQuODQ2YzEuNi45NSAzLjE4OCAxLjQ0OSA0LjYyNSAxLjQ1MSA1LjQwMy4wMDIgOS4base=");
             background-size: contain;
             background-repeat: no-repeat;
         }
@@ -519,7 +519,8 @@
       var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
       
-      ttq.load('D9793CJC77UBBNP5GHBG');
+      // Corrected Pixel ID to match Hazayedet: D977583C77U29TKO6B5G
+      ttq.load('D977583C77U29TKO6B5G');
       ttq.page();
     }(window, document, 'ttq');
     </script>
@@ -680,14 +681,8 @@
 
             // Trigger TikTok Standard Events
             if (typeof ttq !== 'undefined') {
-                // 1. Corrected 'Click button' Standard Event
+                // Corrected Standard Event
                 ttq.track('Click button', {
-                    content_name: 'WhatsApp Group Join Button',
-                    content_category: 'Community Redirect'
-                });
-                
-                // 2. Added 'Consult' Standard Event as backup
-                ttq.track('Consult', {
                     content_name: 'WhatsApp Group Join Button',
                     content_category: 'Community Redirect'
                 });
