@@ -18,17 +18,17 @@
             --bg-base: #fff5f7;
             --bg-surface: rgba(255, 255, 255, 0.88);
             --bg-card: rgba(255, 241, 242, 0.7);
-            --border-color: rgba(251, 113, 133, 0.2); /* Soft rose border */
+            --border-color: rgba(251, 113, 133, 0.2);
             
-            --primary-glow: linear-gradient(135deg, #f43f5e 0%, #db2777 100%); /* Vibrant Rose to Pink */
-            --accent-gold: #d97706; /* Darker amber for contrast on light bg */
+            --primary-glow: linear-gradient(135deg, #f43f5e 0%, #db2777 100%);
+            --accent-gold: #d97706;
             --accent-pink: #db2777;
             
             --whatsapp-green: #25d366;
             --whatsapp-hover: #128c7e;
             --whatsapp-glow: rgba(37, 211, 102, 0.25);
             
-            --text-main: #311c26; /* Deep rose-tinted charcoal for maximum readability */
+            --text-main: #311c26;
             --text-muted: #64748b;
             
             /* Transitions */
@@ -41,14 +41,29 @@
             padding: 0;
         }
 
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: var(--bg-base);
+        }
+
         body {
             font-family: 'Rubik', sans-serif;
-            background-color: var(--bg-base);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            overflow: hidden;
             position: relative;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Ambient Background Gradients */
@@ -77,18 +92,18 @@
         /* Container */
         .container {
             width: 100%;
-            max-width: 480px; /* Highly optimized mobile-first width */
-            margin: 0 auto;
+            max-width: 480px;
             padding: 20px 14px;
             display: flex;
             flex-direction: column;
             gap: 20px;
+            position: relative;
         }
 
         /* Header Logo */
         header {
             text-align: center;
-            padding: 12px 0;
+            padding: 16px 0;
         }
 
         .logo-wrap {
@@ -283,7 +298,7 @@
             width: 24px;
             height: 24px;
             margin-left: 10px;
-            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTS4wNTcgMjRsMS42ODctNi4xNjNjLTEuMDQxLTEuODA0LTEuNTg4LTMuODQ5LTEuNTg3LTUuOTQ2Qy4wNiA1LjM0OCA1LjM5Ny4wMSAxMiAxMDA4LjAxYzMuMjIwMi4wMDEgNi4yMTIgMS4yNDYgOC40NzcgMy41MTQgMi4yNjYgMi4yNjggMy41MDcgNS4yOCUzLjUwNSA4LjQ4NC0uMDA0IDYuNjU3LTUuMzQgMTEuOTk3LTExLjk1MyMTEuOTk3LTIuMDA1LS4wMDEtMy55NzMtLjUwMi01LjcyNC0xLjQ1N0wwIDI0em02LjU5LTQuODQ2YzEuNi45NSAzLjE4OCAxLjQ0OSA0LjYyNSAxLjQ1MSA1LjQwMy4wMDIgOS4base=");
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTS4wNTcgMjRsMS42ODctNi4xNjNjLTEuMDQxLTEuODA0LTEuNTg4LTMuODQ5LTEuNTg3LTUuOTQ2Qy4wNiA1LjM0OCA1LjM5Ny4wMSAxMiAxMDA4LjAxYzMuMjIwMi4wMDEgNi4yMTIgMS4yNDYgOC40NzcgMy41MTQgMi4yNjiaMi4yNjggMy41MDcgNS4yOCUzLjUwNSA4LjQ4NC0uMDA0IDYuNjU3LTUuMzQgMTEuOTk3LTExLjk1MyMTEuOTk3LTIuMDA1LS4wMDEtMy55NzMtLjUwMi01LjcyNC0xLjQ1N0wwIDI0em02LjU5LTQuODQ2YzEuNi45NSAzLjE4OCAxLjQ0OSA0LjYyNSAxLjQ1MSA1LjQwMy4wMDIgOS4base=");
             background-size: contain;
             background-repeat: no-repeat;
         }
@@ -348,7 +363,7 @@
 
         .chat-bubble {
             background: #fff;
-            border-radius: 16px 16px 0 16px; /* RTL bubble style (sender on left) */
+            border-radius: 16px 16px 0 16px;
             padding: 10px 12px;
             max-width: 90%;
             align-self: flex-start;
@@ -359,7 +374,7 @@
 
         .chat-bubble.admin {
             background: #eefdf4;
-            border-radius: 16px 16px 16px 0; /* RTL receiver style */
+            border-radius: 16px 16px 16px 0;
             align-self: flex-end;
             border: 1px solid rgba(34, 197, 94, 0.15);
         }
@@ -520,7 +535,7 @@
       var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
       
-      // מעודכן עם מזהה הפיקסל החדש: D9CERGRC77U5KEVKOI90
+      // פיקסל מותאם לדף הציידת
       ttq.load('D9CERGRC77U5KEVKOI90');
       ttq.page();
     }(window, document, 'ttq');
@@ -529,146 +544,148 @@
 </head>
 <body>
 
-    <div class="bg-glow-1"></div>
-    <div class="bg-glow-2"></div>
+    <div class="page-wrapper">
+        <div class="bg-glow-1"></div>
+        <div class="bg-glow-2"></div>
 
-    <div class="container">
-        
-        <!-- Header -->
-        <header>
-            <div class="logo-wrap">
-                <svg class="logo-icon" viewBox="0 0 24 24">
-                    <!-- Heart shaped shopping bag SVG -->
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-                <span class="logo-text">הציידת</span>
-            </div>
-        </header>
-
-        <!-- Main Card -->
-        <main class="main-card">
-            <div class="badge">
-                <span class="badge-pulse"></span>
-                <span>הצטרפות חינם - פתוח כעת 💎</span>
-            </div>
+        <div class="container">
             
-            <h1>
-                למה לשלם מחיר מלא?
-                <br>
-                <span class="highlight-text">קונים חכם בחצי מחיר!</span>
-            </h1>
-            
-            <p class="subtitle">
-                הצטרפי לקבוצת הדילים השקטה שצדה עבורך את מציאות האופנה, הטיפוח, האקססוריז ועיצוב הבית הכי שווים ברשת - ישירות לווצאפ שלך בחינם.
-            </p>
+            <!-- Header -->
+            <header>
+                <div class="logo-wrap">
+                    <svg class="logo-icon" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    <span class="logo-text">הציידת</span>
+                </div>
+            </header>
 
-            <!-- Features -->
-            <div class="features-container">
+            <!-- Main Card -->
+            <main class="main-card">
+                <div class="badge">
+                    <span class="badge-pulse"></span>
+                    <span>הצטרפות חינם - פתוח כעת 💎</span>
+                </div>
                 
-                <div class="feature-item">
-                    <div class="feature-icon-wrapper">
-                        <svg class="feature-icon" viewBox="0 0 24 24">
-                            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-                        </svg>
-                    </div>
-                    <div class="feature-text">
-                        <span class="feature-title">קבוצה שקטה וממוקדת</span>
-                        <span class="feature-desc">בלי חפירות, בלי דיונים מיותרים. רק קישורים ישירים לדילים הכי חמים.</span>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon-wrapper">
-                        <svg class="feature-icon" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                        </svg>
-                    </div>
-                    <div class="feature-text">
-                        <span class="feature-title">רק מוצרים שנבדקו ידנית</span>
-                        <span class="feature-desc">בגדים, אקססוריז, קוסמטיקה וטיפוח ממוכרים אמינים ובעלי דירוג גבוה.</span>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon-wrapper">
-                        <svg class="feature-icon" viewBox="0 0 24 24">
-                            <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-                        </svg>
-                    </div>
-                    <div class="feature-text">
-                        <span class="feature-title">קופוני הנחה סודיים</span>
-                        <span class="feature-desc">הנחות בלעדיות וקופוני חנות מוסתרים שיחסכו לך מאות שקלים.</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CTA -->
-            <div class="cta-wrapper">
-                <a href="https://chat.whatsapp.com/G11rIFR6Ctn5jG26oJiyeR" id="whatsapp-cta" class="cta-btn" onclick="trackAndRedirect(event)">הצטרפות לווצאפ של הציידת</a>
-                <p class="cta-subtext">קבוצה שקטה | ללא עלות | פתוח לזמן מוגבל</p>
-            </div>
-        </main>
-
-        <!-- Social Proof Widget -->
-        <section class="proof-section">
-            <h2 class="proof-title">חברות מועדון הציידת מספרות:</h2>
-            <div class="chat-container">
+                <h1>
+                    למה לשלם מחיר מלא?
+                    <br>
+                    <span class="highlight-text">קונים חכם בחצי מחיר!</span>
+                </h1>
                 
-                <div class="chat-bubble">
-                    <div class="chat-user">דנה מ.</div>
-                    <p class="chat-text">שומעות? הג'ינס והאקססוריז שהמלצתן עליהם הגיעו! יושב מושלם והאיכות פסיכית יחסית למחיר של 40 שקל. הצלתן אותי!</p>
-                    <span class="chat-time">12:32</span>
+                <p class="subtitle">
+                    הצטרפי לקבוצת הדילים השקטה שצדה עבורך את מציאות האופנה, הטיפוח, האקססוריז ועיצוב הבית הכי שווים ברשת - ישירות לווצאפ שלך בחינם.
+                </p>
+
+                <!-- Features -->
+                <div class="features-container">
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg class="feature-icon" viewBox="0 0 24 24">
+                                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <span class="feature-title">קבוצה שקטה וממוקדת</span>
+                            <span class="feature-desc">בלי חפירות, בלי דיונים מיותרים. רק קישורים ישירים לדילים הכי חמים.</span>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg class="feature-icon" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <span class="feature-title">רק מוצרים שנבדקו ידנית</span>
+                            <span class="feature-desc">בגדים, אקססוריז, קוסמטיקה וטיפוח ממוכרים אמינים ובעלי דירוג גבוה.</span>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg class="feature-icon" viewBox="0 0 24 24">
+                                <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <span class="feature-title">קופוני הנחה סודיים</span>
+                            <span class="feature-desc">הנחות בלעדיות וקופוני חנות מוסתרים שיחסכו לך מאות שקלים.</span>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="chat-bubble admin">
-                    <div class="chat-user admin-title">הציידת (מנהלת)</div>
-                    <p class="chat-text">איזה כיף דנה! תתחדשי 💖 בהמשך השבוע נעלה ריכוז מיוחד של שמלות קיץ מהממות ומוצרי טיפוח מומלצים מחנויות עם משלוח מהיר.</p>
-                    <span class="chat-time">12:35</span>
+                <!-- CTA -->
+                <div class="cta-wrapper">
+                    <!-- קישור נקי ללא פונקציות JavaScript בעייתיות, בדיוק כמו בדף שעובד -->
+                    <a href="https://chat.whatsapp.com/G11rIFR6Ctn5jG26oJiyeR" id="whatsapp-cta" class="cta-btn">הצטרפות לווצאפ של הציידת</a>
+                    <p class="cta-subtext">קבוצה שקטה | ללא עלות | פתוח לזמן מוגבל</p>
+                </div>
+            </main>
+
+            <!-- Social Proof Widget -->
+            <section class="proof-section">
+                <h2 class="proof-title">חברות מועדון הציידת מספרות:</h2>
+                <div class="chat-container">
+                    
+                    <div class="chat-bubble">
+                        <div class="chat-user">דנה מ.</div>
+                        <p class="chat-text">שומעות? הג'ינס והאקססוריז שהמלצתן עליהם הגיעו! יושב מושלם והאיכות פסיכית יחסית למחיר של 40 שקל. הצלתן אותי!</p>
+                        <span class="chat-time">12:32</span>
+                    </div>
+
+                    <div class="chat-bubble admin">
+                        <div class="chat-user admin-title">הציידת (מנהלת)</div>
+                        <p class="chat-text">איזה כיף דנה! תתחדשי 💖 בהמשך השבוע נעלה ריכוז מיוחד של שמלות קיץ מהממות ומוצרי טיפוח מומלצים מחנויות עם משלוח מהיר.</p>
+                        <span class="chat-time">12:35</span>
+                    </div>
+
+                    <div class="chat-bubble">
+                        <div class="chat-user">יסמין ס.</div>
+                        <p class="chat-text">הקבוצה הכי טובה שיש. שקטה, בלי דיבורים ובלי ספאם, רק הדילים הכי שווים והטרנדים הכי חמים מטיקטוק. השטיח והווילונות לבית שקניתי מהלינקים שלכן פשוט מושלמים!</p>
+                        <span class="chat-time">היום, 09:15</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2 class="faq-title">שאלות נפוצות</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">למה הקבוצה שקטה?</div>
+                    <div class="faq-answer">
+                        כדי שלא להציק לך! הקבוצה מיועדת לשליחת קישורים נבחרים וקופונים שווים בלבד. רק המנהלות יכולות לשלוח הודעות כדי למנוע הצפת התראות מיותרות בטלפון שלך.
+                    </div>
                 </div>
 
-                <div class="chat-bubble">
-                    <div class="chat-user">יסמין ס.</div>
-                    <p class="chat-text">הקבוצה הכי טובה שיש. שקטה, בלי דיבורים ובלי ספאם, רק הדילים הכי שווים והטרנדים הכי חמים מטיקטוק. השטיח והווילונות לבית שקניתי מהלינקים שלכן פשוט מושלמים!</p>
-                    <span class="chat-time">היום, 09:15</span>
+                <div class="faq-item">
+                    <div class="faq-question">איך המוצרים נבחרים?</div>
+                    <div class="faq-answer">
+                        אנחנו מסננות בקפידה את הדילים ברשת. אנחנו בודקות ציונים של מוכרים, פידבקים של קונים וחוות דעת עם תמונות אמיתיות של המוצר כדי לוודא שאת מקבלת איכות מצוינת במחיר הכי נמוך שיש.
+                    </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <h2 class="faq-title">שאלות נפוצות</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">למה הקבוצה שקטה?</div>
-                <div class="faq-answer">
-                    כדי שלא להציק לך! הקבוצה מיועדת לשליחת קישורים נבחרים וקופונים שווים בלבד. רק המנהלות יכולות לשלוח הודעות כדי למנוע הצפת התראות מיותרות בטלפון שלך.
+                <div class="faq-item">
+                    <div class="faq-question">האם יש עלות להצטרפות?</div>
+                    <div class="faq-answer">
+                        ממש לא, ההצטרפות והחברות בקבוצה הן 100% בחינם ותמיד יישארו כך! 
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-question">איך המוצרים נבחרים?</div>
-                <div class="faq-answer">
-                    אנחנו מסננות בקפידה את הדילים ברשת. אנחנו בודקות ציונים של מוכרים, פידבקים של קונים וחוות דעת עם תמונות אמיתיות של המוצר כדי לוודא שאת מקבלת איכות מצוינת במחיר הכי נמוך שיש.
-                </div>
-            </div>
+            </section>
 
-            <div class="faq-item">
-                <div class="faq-question">האם יש עלות להצטרפות?</div>
-                <div class="faq-answer">
-                    ממש לא, ההצטרפות והחברות בקבוצה הן 100% בחינם ותמיד יישארו כך! 
-                </div>
-            </div>
+            <!-- Footer -->
+            <footer>
+                <p>כל הזכויות שמורות להציידת © 2026</p>
+                <p>דף נחיתה זה אינו קשור באופן רשמי לחברת Meta. השימוש בקישורים ובקופונים באחריות המשתמש בלבד.</p>
+            </footer>
 
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>כל הזכויות שמורות להציידת © 2026</p>
-            <p>דף נחיתה זה אינו קשור באופן רשמי לחברת Meta. השימוש בקישורים ובקופונים באחריות המשתמש בלבד.</p>
-        </footer>
-
+        </div>
     </div>
 
     <!-- Scripts -->
@@ -685,32 +702,6 @@
                 }
             });
         });
-
-        // Click Tracking and Redirect function
-        function trackAndRedirect(event) {
-            event.preventDefault();
-            const destination = event.currentTarget.href;
-
-            // Trigger TikTok Standard & Custom Events
-            if (typeof ttq !== 'undefined') {
-                // שולח אירוע לחיצה תקני ומדויק
-                ttq.track('Click button', {
-                    content_name: 'WhatsApp Hazayedet Group Join Button',
-                    content_category: 'Feminine Community Redirect'
-                });
-                
-                // שליחת אירוע המרה מותאם אישית עם מזהה הפיקסל הנכון
-                ttq.track('ClickWhatsAppCTA_Hazayedet', {
-                    page_title: document.title,
-                    pixel_id: 'D9CERGRC77U5KEVKOI90'
-                });
-            }
-
-            // Redirect after 350ms to ensure the tracking requests resolve
-            setTimeout(function() {
-                window.location.href = destination;
-            }, 350);
-        }
     </script>
 </body>
 </html>
