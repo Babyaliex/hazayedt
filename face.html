@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="הצטרפו לקבוצת הדילים השקטה של הצייד. מצאו את המוצרים הכי חמים, קופונים סודיים והנחות מטורפות של 50% עד 90% פחות מהארץ!">
+    <title>הצייד עלי אקספרס | קבוצת הדילים הרשמית</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1355854329078389');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1355854329078389&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Styles -->
+    <style>
+        :root {
+            /* Inviting Light High-Tech Theme */
+            --bg-base: #f4f5f6;
+            --bg-surface: #ffffff;
+            --bg-card: #f8f9fa;
+            --border-primary: #e4e7eb;
+            --text-primary: #1a1a1c;
+            --text-secondary: #6e6e73;
+            --accent-green: #25d366;
+            --accent-green-dark: #128c7e;
+            
+            --glow-color: rgba(37, 211, 102, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: var(--bg-base);
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.5;
+            /* Minimalist light grid background */
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: center;
+        }
+
+        /* Wrapper that clips any overflow causing mobile right-shift */
+        .page-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Abstract radial green glow behind the CTA */
+        .light-leak {
+            position: absolute;
+            top: 35%; /* Adjusted upward since CTA moved up */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(37, 211, 102, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 440px; /* Perfect lock for phone viewports */
+            padding: 30px 20px 24px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            position: relative;
+        }
+
+        /* Header Logo */
+        header {
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
+        .brand-logo {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 900;
+            font-size: 1rem;
+            color: var(--text-primary);
+            border: 1px solid var(--border-primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            background-color: var(--bg-surface);
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Typography - Asymmetric & High Contrast */
+        .hero-section {
+            text-align: right;
+            padding: 0 4px;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 900;
+            line-height: 1.18;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            color: #000000;
+        }
+
+        /* Crossed out price custom design */
+        .crossed-out {
+            text-decoration: line-through;
+            text-decoration-color: #ff3b30;
+            text-decoration-thickness: 3px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 1.8rem;
+            display: inline-block;
+            margin-left: 4px;
+        }
+
+        .glow-title {
+            color: #0fa94a;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .hero-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            line-height: 1.55;
+        }
+
+        /* Minimalist Vertical Info List (No Emojis, No outer card wrapping the list) */
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* Distinct items instead of one giant card */
+        }
+
+        .info-item {
+            background-color: var(--bg-surface);
+            padding: 16px 18px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            border-radius: 16px;
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .info-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #0fa94a;
+            background-color: rgba(37, 211, 102, 0.08);
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-top: 1px;
+        }
+
+        .info-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .info-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .info-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+
+        /* Dynamic Giant CTA - Custom Terminal style */
+        .cta-container {
+            width: 100%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-primary);
+            border-radius: 24px;
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+
+        /* Live status badge */
+        .status-bar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(37, 211, 102, 0.08);
+            border: 1px solid rgba(37, 211, 102, 0.2);
+            color: #0fa94a;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #0fa94a;
+            border-radius: 50%;
+            box-shadow: 0 0 6px rgba(37, 211, 102, 0.6);
+            animation: pulse-dot 1.8s infinite;
+        }
+
+        .whatsapp-cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: var(--accent-green);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.15rem;
+            padding: 16px 20px;
+            border-radius: 16px;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.15);
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp-cta-button::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTS4wNTMgMjQuMGwxLjg3MS02Ljg0QTExLjg2IDExLjg2IDAgMCAxIDAgMTIuMDRDMCA1LjM5MSA1LjM5MSAwIDEyLjA4OCAwcyAxMi4wODggNS4zOTEgMTIuMDg4IDEyLjA4OC01LjM5MSAxMi4wODgtMTIuMDg4IDEyLjA4OGExMS44MyAxMS44MyAwIDAgMS01LjgxNi0xLjUxbC02LjIxOSAxLjYzN3pNmMxMS45NSAwIGExMC4wMTUgMTAuMDE1IDAgMCAwIDkuOTYgMTAuMDQgOS45NjYgOS45NjYgMCAwIDAtMTkuOTIgMGMwIDEuOC40NzIgMy41MSAxLjMzNiA1LjA1NmwtLjU4OCAyLjE0OCAyLjIwMi0uNTc4QTEwLjAxIDEwLjAxIDAgMCAwIDEyLjA0IDIyLjA0em01Ljk1MS03LjQ2OGMtcC4zLS4xNS0xLjc3NC0uODc1LTIuMDQ2LS45NzUtLjI3My0uMS0uNDcyLS4xNS0uNjcuMTUtLjE5Ny4zLS43NjcuOTc1LS45NCAxLjE3NC0uMTczLjItLjM0Ny4yMjUtLjY0LjA3NS0uMzktMS4yNjYtLjQ2Ny0yLjQxLTEuNDg4LS44OS0uNzkzLTEuNDktMS43NzMtMS42NjQtMi4wNzMtLjE3My0uMy0uMDEtLjQ2Mi4xMy0uNjEuMTM1LS4xMzUuMy0uMzQ5LjQ1LS41MjQuMTUtLjE3NS4yLS4zLjMtLjUuMS0uMi4wNS0uMzc1LS4wMjUtLjUyNC0u0NzUtLjE1LS42Ny0xLjY0OS0uOTE4LTIuMjU1LS4yNDItLjU4OC0uNDg3LS41MDgtLjY3LS41MTgtLjE3My0uMDA4LS4zNzEtLjAxLS41NjktLjAxcy0uNTI0LjA3NS0uNzk3LjM3NWMtLjI3My4zLTEuMDQ4IDEuMDI1LTEuMDQ4IDIuNSA0IDEuNDc1IDIuNTUgMy4yNjUgNS4xNTggNi42OTEgOC4xOSA0LjkzNiA0LjExIDEuMjU2IDQuOTI1IDEuNTkxIDYuMDg5IDEuNjE2Ljc3OC4wMjUgMi41NDgtLjQyNSAyLjkxLTMS4zMTUuMzYzLS44OS4zNjMtMS42NTMuMjU1LTEuODE1LS4xMDgtLjE2Mi0uMzQ3LS4yNjItLjY0Ni0uNDF6Ii8+PC9zdmc+");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .whatsapp-cta-button:hover {
+            background-color: #20ba5a;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        .whatsapp-cta-button:active {
+            transform: translateY(0);
+        }
+
+        .sub-cta-text {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+
+        /* Minimal FAQ Grid */
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 0 4px;
+        }
+
+        .faq-headline {
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .faq-card {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            background-color: var(--bg-surface);
+            padding: 16px;
+            border-radius: 16px;
+            border: 1px solid var(--border-primary);
+        }
+
+        .faq-q {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .faq-a {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            padding: 16px 0 8px 0;
+            border-top: 1px solid var(--border-primary);
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        @keyframes pulse-dot {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.9);
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <div class="light-leak"></div>
+
+        <div class="container">
+            
+            <!-- Header -->
+            <header>
+                <div class="brand-logo">הצייד עלי אקספרס</div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1>
+                    למה לשלם <span class="crossed-out">מחיר מלא?</span>
+                    <br>
+                    <span class="glow-title">קונים ישירות מהמקור.</span>
+                </h1>
+                <p class="hero-desc">
+                    הצטרפו לקבוצת הדילים השקטה של הצייד ותתחילו לקנות את אותם המוצרים ב-50% עד 90% פחות. בלי חפירות ובלי ספאם.
+                </p>
+            </section>
+
+            <!-- CTA Terminal Card -->
+            <section class="cta-container">
+                <div class="status-bar">
+                    <span class="status-dot"></span>
+                    <span>ההצטרפות פתוחה בחינם לזמן מוגבל</span>
+                </div>
+                
+                <a href="https://chat.whatsapp.com/HjEfcKZZgTA3Guz7RZ6qeq" id="whatsapp-cta" class="whatsapp-cta-button" onclick="trackAndRedirect(event)">הצטרפות ישירה לווצאפ</a>
+                
+                <p class="sub-cta-text">קבוצה שקטה | ללא עלות | מעל 15,000 חברים כבר חוסכים</p>
+            </section>
+
+            <!-- Minimalist Features List -->
+            <section class="info-list">
+                
+                <div class="info-item">
+                    <span class="info-num">01</span>
+                    <div class="info-content">
+                        <span class="info-title">קבוצה שקטה לחלוטין</span>
+                        <span class="info-desc">רק מנהלי הקבוצה שולחים הודעות. בלי דיונים, בלי חפירות ובלי התראות ספאם.</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-num">02</span>
+                    <div class="info-content">
+                        <span class="info-title">סינון וניטור ידני</span>
+                        <span class="info-desc">אנחנו מפרסמים רק דילים שנבדקו, מוכרים אמינים ומוצרים עם פידבק חיובי גבוה.</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-num">03</span>
+                    <div class="info-content">
+                        <span class="info-title">קופוני הנחה בלעדיים</span>
+                        <span class="info-desc">גישה לקופונים סודיים וירידות מחיר דרמטיות בזמן אמת לפני כולם.</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Minimal FAQ Grid -->
+            <section class="faq-grid">
+                <h2 class="faq-headline">שאלות נפוצות</h2>
+                
+                <div class="faq-card">
+                    <span class="faq-q">איך זה עובד ולמה זה בחינם?</span>
+                    <p class="faq-a">אנחנו מאתרים דילים מבוססי הנחות עמוקות וקופוני חנות מוסתרים. ההצטרפות לקבוצה היא בחינם לחלוטין. הרווח שלנו מגיע מעמלות שותפים קטנות שמשולמות על ידי פלטפורמות הקנייה עצמן, ללא כל תוספת עלות מצדכם.</p>
+                </div>
+
+                <div class="faq-card">
+                    <span class="faq-q">האם תהיה הצפה של הודעות בטלפון שלי?</span>
+                    <p class="faq-a">ממש לא. הקבוצה שקטה וסגורה לתגובות. אנחנו שולחים בממוצע כ-2 הודעות בשעה, בעיקר בין השעות 9:00 בבוקר ל-23:00 בלילה, כדי שלא להפריע לכם בשעות המנוחה.</p>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <p>כל הזכויות שמורות להצייד © 2026</p>
+                <p>דף נחיתה זה אינו קשור באופן רשמי לחברות AliExpress או Meta. השימוש בקישורים ובקופונים באחריות המשתמש בלבד.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Click Tracking and Redirect function
+        function trackAndRedirect(event) {
+            event.preventDefault();
+            const destination = event.currentTarget.href;
+
+            // Trigger Meta Pixel Events
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+                fbq('trackCustom', 'ClickWhatsAppCTA_General', {
+                    page_title: document.title,
+                    pixel_id: '1355854329078389'
+                });
+            }
+
+            // Redirect after 350ms to ensure the tracking requests resolve
+            setTimeout(function() {
+                window.location.href = destination;
+            }, 350);
+        }
+    </script>
+</body>
+</html>
